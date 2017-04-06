@@ -21,7 +21,7 @@
                 console.log(event.event_name.split(":")[0]);
                 console.log(desiredId);
                 $("#" + desiredId).html(event.event_value );
-                //console.log(getEvent());
+                console.log(getEvent());
             }
 
             function main() {
