@@ -44,6 +44,7 @@
                 console.log(desiredAttribute);
                 console.log(ACTIONVALUES[desiredAction]);
                 STATE[desiredAttribute] += ACTIONVALUES[desiredAction] * event.event_value;
+                STATE[desiredAttribute] = Math.max(0, STATE[desiredAttribute]);
 
 
                 $("#fridge-value").html(STATE.fridge);
