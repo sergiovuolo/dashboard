@@ -1,8 +1,17 @@
             STATE = {
                 fridge: 8,
                 coffee: 6,
-                temperature: 22.5                
+                temp: 22.5                
             } 
+
+            ACTIONVALUES = {
+                "put": +1,
+                "take": -1,
+                "drink": -1,
+                "buy": +1,
+                "up": +1,
+                "down": -1
+            }
 
             function getRandomArbitrary(min, max) {
                 return Math.floor(Math.random() * (max - min)) + min;
@@ -29,9 +38,17 @@
                 $("#" + desiredId).html(event.event_value );
                 console.log(getEvent());*/
 
+                var event = getEvent();
+                var desiredAttribute = event.event_name.split(":")[0];
+                var desiredAction = event.event_name.split(":")[1];
+                console.log(desiredAttribute);
+                console.log(ACTIONVALUES[desiredAction]);
+                STATE[desiredAttribute] += ACTIONVALUES[desiredAction] * event.event_value;
+
+
                 $("#fridge-value").html(STATE.fridge);
                 $("#coffee-value").html(STATE.coffee);
-                $("#temp-value").html(STATE.temperature);
+                $("#temp-value").html(STATE.temp);
             }
 
             function main() {
