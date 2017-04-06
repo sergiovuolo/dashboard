@@ -1,3 +1,9 @@
+            STATE = {
+                fridge: 8,
+                coffee: 6,
+                temperature: 22.5                
+            } 
+
             function getRandomArbitrary(min, max) {
                 return Math.floor(Math.random() * (max - min)) + min;
             }
@@ -13,7 +19,7 @@
             }
 
             function changeFrontEnd() {
-                var event = getEvent();
+/*                var event = getEvent();
                 var desiredId = event.event_name.split(":")[0] + "-value";
                 console.log(event);
                 console.log(event.event_name);
@@ -21,7 +27,11 @@
                 console.log(event.event_name.split(":")[0]);
                 console.log(desiredId);
                 $("#" + desiredId).html(event.event_value );
-                console.log(getEvent());
+                console.log(getEvent());*/
+
+                $("#fridge-value").html(STATE.fridge);
+                $("#coffee-value").html(STATE.coffee);
+                $("#temp-value").html(STATE.temperature);
             }
 
             function main() {
