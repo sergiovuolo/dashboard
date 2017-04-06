@@ -12,7 +12,7 @@
                 }  
             }
 
-            function main() {
+            function changeFrontEnd() {
                 var event = getEvent();
                 var desiredId = event.event_name.split(":")[0] + "-value";
                 console.log(event);
@@ -21,6 +21,11 @@
                 console.log(event.event_name.split(":")[0]);
                 console.log(desiredId);
                 $("#" + desiredId).html(event.event_value );
+                //console.log(getEvent());
+            }
+
+            function main() {
+                setInterval(changeFrontEnd, 1000);
 
             }
 
