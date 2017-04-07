@@ -21,6 +21,11 @@ header {
     background-color: #54C7EF;
 }
 
+header > h1 {
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
 #logo {
     width: 50px;
     margin-top: 7px;
