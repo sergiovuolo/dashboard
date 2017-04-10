@@ -50,6 +50,18 @@
                 $("#fridge-value").html(STATE.fridge);
                 $("#coffee-value").html(STATE.coffee);
                 $("#temp-value").html(STATE.temp);
+
+                if (STATE.fridge === 0 && STATE.coffee < 10 && STATE.temp < 10) {
+                    $("#mood > .content").html("&#9889"); 
+                } else if (STATE.fridge > 0 && STATE.coffee < 10 && STATE.temp < 10) {
+                    $("#mood > .content").html("&#9748"); 
+                } else if (STATE.fridge > 0 && STATE.coffee > 10 && STATE.temp < 10) {
+                    $("#mood > .content").html("&#9730;"); 
+                } else if (STATE.fridge > 0 && STATE.coffee < 10 && STATE.temp > 10) {
+                    $("#mood > .content").html("&#9729;");                    
+                } else {
+                    $("#mood > .content").html("&#9788;");
+                };
             }
 
             function main() {
